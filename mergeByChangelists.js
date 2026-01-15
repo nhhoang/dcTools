@@ -34,8 +34,8 @@ const SOURCE_WORKSPACE = 'C:/Users/hoang/Perforce/Company_Windows';
 const COMBAT_LUA_SOURCE_WORKSPACE = 'C:/Users/hoang/Perforce/Company_Windows_Combat_Lua';
 
 // Target Workspaces
-const CLIENT_TARGET_WORKSPACE = 'C:/Users/hoang/Perforce/Company_Windows_Merge_Target_Client'; 
-const COMBAT_LUA_TARGET_WORKSPACE = 'C:/Users/hoang/Perforce/Company_Windows_Merge_Target_Combat_Lua';
+const CLIENT_TARGET_WORKSPACE = 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Client'; 
+const COMBAT_LUA_TARGET_WORKSPACE = 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Combat_Lua';
 
 const NEW_CL_DESCRIPTION = 'Auto merge files from Source to Target based on CLs';
 
