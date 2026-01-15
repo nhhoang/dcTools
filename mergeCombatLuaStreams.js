@@ -88,7 +88,7 @@ function integrateStream(sourceStream, targetStream) {
         
         // 5. Resolve
         console.log(`   Resolving files (Auto-Safe)...`);
-        runP4Command(`p4 resolve -c ${clId} -as`, WORKSPACE_PATH);
+        runP4Command(`p4 resolve -c ${clId} -am`, WORKSPACE_PATH);
         
         console.log(`   ✨ Hoàn tất integrate vào ${targetStream}.`);
     } else {
