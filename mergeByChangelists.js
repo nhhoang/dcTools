@@ -30,13 +30,20 @@ const { execSync } = require('child_process');
 const CHANGE_LIST_FILE = path.resolve(__dirname, 'changelists.txt');
 
 // Source Workspaces
-// Source Workspaces
-const SOURCE_WORKSPACE = '/Users/hoangnguyen/Perforce/MacbookPro'; 
-const COMBAT_LUA_SOURCE_WORKSPACE = '/Users/hoangnguyen/Perforce/MacbookPro_Combat_Lua';
+const SOURCE_WORKSPACE = process.platform === 'win32' 
+    ? 'C:/Users/hoang/Perforce/Company_Windows' 
+    : '/Users/hoangnguyen/Perforce/Company_MacbookPro'; 
+const COMBAT_LUA_SOURCE_WORKSPACE = process.platform === 'win32' 
+    ? 'C:/Users/hoang/Perforce/Company_Windows_Combat_Lua' 
+    : '/Users/hoangnguyen/Perforce/Company_MacbookPro_Combat_Lua';
 
 // Target Workspaces
-const CLIENT_TARGET_WORKSPACE = '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Client'; 
-const COMBAT_LUA_TARGET_WORKSPACE = '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Combat_Lua';
+const CLIENT_TARGET_WORKSPACE = process.platform === 'win32' 
+    ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Client' 
+    : '/Users/hoangnguyen/Perforce/Desktop_Merge_Target_Client'; 
+const COMBAT_LUA_TARGET_WORKSPACE = process.platform === 'win32' 
+    ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Combat_Lua' 
+    : '/Users/hoangnguyen/Perforce/Desktop_Merge_Target_Combat_Lua';
 
 const NEW_CL_DESCRIPTION = 'Auto merge files from Source to Target based on CLs';
 
