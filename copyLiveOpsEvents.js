@@ -27,8 +27,8 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 // ================= CONFIGURATION =================
-const SOURCE_WORKSPACE = 'C:/Users/hoang/Perforce/Company_Windows'; 
-const TARGET_WORKSPACE = 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Client'; 
+const SOURCE_WORKSPACE = process.platform === 'win32' ? 'C:/Users/hoang/Perforce/Company_Windows' : '/Users/hoangnguyen/Perforce/Company_MacbookPro'; 
+const TARGET_WORKSPACE = process.platform === 'win32' ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Client' : '/Users/hoangnguyen/Perforce/Desktop_Merge_Target_Client'; 
 const JSON_FILE = 'liveopsEvents.json';
 const NEW_CL_DESCRIPTION = "Auto-generated CL for LiveOps Events";
 const TARGET_TYPE = 'LIVE_OPS_ASSETS'; 

@@ -29,16 +29,16 @@ const { execSync } = require('child_process');
 const COMBAT_LUA_WORKSPACE = 'Desktop_Merge_Target_Combat_Lua';
 const CLIENT_WORKSPACE = 'Desktop_Merge_Target_Client';
 const CONFIG_WORKSPACE = 'Desktop_Merge_Target_Config';
-const COMBAT_LUA_WORKSPACE_PATH = 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Combat_Lua'
-const CLIENT_WORKSPACE_PATH = 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Client'
-const CONFIG_WORKSPACE_PATH = 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Config'
+const COMBAT_LUA_WORKSPACE_PATH = process.platform === 'win32' ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Combat_Lua' : '/Users/hoangnguyen/Perforce/Desktop_Merge_Target_Combat_Lua'
+const CLIENT_WORKSPACE_PATH = process.platform === 'win32' ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Client' : '/Users/hoangnguyen/Perforce/Desktop_Merge_Target_Client'
+const CONFIG_WORKSPACE_PATH = process.platform === 'win32' ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Config' : '/Users/hoangnguyen/Perforce/Desktop_Merge_Target_Config'
 
 const COMBAT_LUA_SOURCE_STREAM = '//dcwc/v1_1_14_7_Patch_A_Combat_Lua'
 const COMBAT_LUA_TARGET_STREAM = '//dcwc/v1_1_14_8_Patch_A_Combat_Lua'
 
 const CLIENT_SOURCE_STREAM = '//dcwc/v1_1_14_7_Patch_A_Assets'
 const CLIENT_TARGET_STREAM = '//dcwc/v1_1_14_8_Patch_A_Assets'
-
+    
 const CONFIG_SOURCE_STREAM = '//dcwc/v1_1_14_7_Patch_A_Config'
 const CONFIG_TARGET_STREAM = '//dcwc/v1_1_14_8_Patch_A_Config'
 

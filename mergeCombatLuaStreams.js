@@ -27,14 +27,16 @@ const { execSync } = require('child_process');
 
 // ================= CONFIGURATION =================
 const MY_WORKSPACE = 'Desktop_Merge_Target_Combat_Lua';
-const WORKSPACE_PATH = 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Combat_Lua'
+const WORKSPACE_PATH = process.platform === 'win32' 
+    ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Combat_Lua' 
+    : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Combat_Lua';
 
-const STREAM_PATCH   = '//dcwc/v1_1_14_8_Patch_A_Combat_Lua';
+const STREAM_PATCH   = '//dcwc/v1_1_14_9_Patch_A_Combat_Lua_Revert1';
 const STREAM_PARENT  = '//dcwc/v1_1_14_Parent_Combat_Lua';
 const STREAM_TRUNK   = '//dcwc/combat_lua';
 const STREAM_STAGING = '//dcwc/Gear_Character_Staging_Combat_Lua';
 
-const CL_DESCRIPTION = 'Auto integrate downstream with Sync';
+const CL_DESCRIPTION = 'Merging ';
 
 // ================= HELPER FUNCTIONS =================
 
@@ -53,8 +55,8 @@ function runP4Command(command, cwd) {
     }
 }
 
-function createCL() {
-    const cmd = `p4 --field "Description=${CL_DESCRIPTION}" change -o | p4 -c ${MY_WORKSPACE} change -i`;
+function createCL(from, to) {
+    const cmd = `p4 --field "Description=${CL_DESCRIPTION} ${from} to ${to}" change -o | p4 -c ${MY_WORKSPACE} change -i`;
     const output = runP4Command(cmd, WORKSPACE_PATH);
     if (output) {
         const match = output.match(/Change (\d+) created/);
@@ -75,7 +77,7 @@ function integrateStream(sourceStream, targetStream) {
     runP4Command(`p4 sync`, WORKSPACE_PATH); // Tương đương p4 sync //...
 
     // 3. Tạo Changelist
-    const clId = createCL();
+    const clId = createCL(sourceStream, targetStream);
     if (!clId) return;
 
     // 4. Chạy lệnh Integrate với cờ -i
@@ -88,7 +90,7 @@ function integrateStream(sourceStream, targetStream) {
         
         // 5. Resolve
         console.log(`   Resolving files (Auto-Safe)...`);
-        runP4Command(`p4 resolve -c ${clId} -am`, WORKSPACE_PATH);
+        runP4Command(`p4 resolve -c ${clId} -am -dw`, WORKSPACE_PATH);
         
         console.log(`   ✨ Hoàn tất integrate vào ${targetStream}.`);
     } else {
@@ -103,10 +105,10 @@ function main() {
     console.log("=== BẮT ĐẦU QUY TRÌNH INTEGRATE & SYNC LIÊN HOÀN ===");
 
     // Bước 1: Patch -> Parent
-    integrateStream(STREAM_PATCH, STREAM_PARENT);
+    // integrateStream(STREAM_PATCH, STREAM_PARENT);
 
     // Bước 2: Parent -> Trunk
-    integrateStream(STREAM_PARENT, STREAM_TRUNK);
+    // integrateStream(STREAM_PARENT, STREAM_TRUNK);
 
     // Bước 3: Trunk -> Staging
     integrateStream(STREAM_TRUNK, STREAM_STAGING);
