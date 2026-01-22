@@ -185,13 +185,13 @@ async function main() {
 
     // Helper to get Context (Source & Target) based on path
     function getFileContext(depotPath) {
-        if (depotPath.toLowerCase().includes('combat_lua')) {
-            return { 
-                type: 'COMBAT_LUA', 
-                srcWorkspace: COMBAT_LUA_SOURCE_WORKSPACE, 
-                targetWorkspace: COMBAT_LUA_TARGET_WORKSPACE 
-            };
-        }
+        // if (depotPath.toLowerCase().includes('combat_lua')) {
+        //     return { 
+        //         type: 'COMBAT_LUA', 
+        //         srcWorkspace: COMBAT_LUA_SOURCE_WORKSPACE, 
+        //         targetWorkspace: COMBAT_LUA_TARGET_WORKSPACE 
+        //     };
+        // }
         return { 
             type: 'CLIENT', 
             srcWorkspace: SOURCE_WORKSPACE, 

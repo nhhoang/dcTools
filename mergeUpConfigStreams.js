@@ -1,4 +1,3 @@
-
 const colors = {
     reset: "\x1b[0m",
     yellow: "\x1b[33m",
@@ -26,17 +25,17 @@ console.log = (...args) => {
 const { execSync } = require('child_process');
 
 // ================= CONFIGURATION =================
-const MY_WORKSPACE = 'Desktop_Merge_Target_Combat_Lua';
+const MY_WORKSPACE = 'Desktop_Merge_Target_Config';
 const WORKSPACE_PATH = process.platform === 'win32' 
-    ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Combat_Lua' 
-    : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Combat_Lua';
+    ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Config' 
+    : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Config';
 
-const STREAM_PATCH   = '//dcwc/v1_1_14_9_Patch_A_Combat_Lua_Revert1';
-const STREAM_PARENT  = '//dcwc/v1_1_14_Parent_Combat_Lua';
-const STREAM_TRUNK   = '//dcwc/combat_lua';
-const STREAM_STAGING = '//dcwc/Gear_Character_Staging_Combat_Lua';
+const STREAM_PATCH   = '//dcwc/v1_1_14_10_Patch_A_Config';
+const STREAM_PARENT  = '//dcwc/v1_1_14_Parent_Config';
+const STREAM_TRUNK   = '//dcwc/config';
+const STREAM_STAGING = '//dcwc/Gear_Character_Staging_Config';
 
-const CL_DESCRIPTION = 'Merging ';
+const CL_DESCRIPTION = '14.10: Merging ';
 
 // ================= HELPER FUNCTIONS =================
 
@@ -104,14 +103,11 @@ function integrateStream(sourceStream, targetStream) {
 function main() {
     console.log("=== BẮT ĐẦU QUY TRÌNH INTEGRATE & SYNC LIÊN HOÀN ===");
 
-    // Bước 1: Patch -> Parent
-    integrateStream(STREAM_PATCH, STREAM_PARENT);
+    // Bước 1: Staging -> Trunk
+    integrateStream(STREAM_STAGING, STREAM_TRUNK);
 
-    // Bước 2: Parent -> Trunk
-    integrateStream(STREAM_PARENT, STREAM_TRUNK);
-
-    // Bước 3: Trunk -> Staging
-    integrateStream(STREAM_TRUNK, STREAM_STAGING);
+    // Bước 2: Trunk -> Patch
+    integrateStream(STREAM_TRUNK, STREAM_PATCH);
 
     console.log("\n=== HOÀN THÀNH ===");
     console.log("Mời bạn kiểm tra các Changelist trong P4V trước khi Submit.");

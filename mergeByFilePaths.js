@@ -30,24 +30,15 @@ const { execSync } = require('child_process');
 // Absolute path to the file containing the list of CLs
 const CHANGE_LIST_FILE = path.resolve(__dirname, 'changelists.txt');
 const FILE_PATHS = [
-    "//dcwc/Gear_Character_Development_Config/excel/Enemy.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/BadgeRoute.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/SkillMonster.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/BadgeSkill.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/BuffTemplate.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/EnemyTower.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/Skill.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/AllyInfo.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/Avatar.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/CharacterProfile.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/Profile.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/TrialChapter.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/TrialLevel.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/AllyPassiveRelation.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/Language/SourceBattleDesc.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/Language/SourceCommonDesc.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/AllyActiveRelation.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/Skills/SkillTacticalResonance.csv"
+    "//dcwc/Gear_Character_Development_Config/excel/Activity.csv",
+    "//dcwc/Gear_Character_Development_Config/excel/ActivityCollectionReward.csv",
+    "//dcwc/Gear_Character_Development_Config/excel/AdsBanner.csv",
+    "//dcwc/Gear_Character_Development_Config/excel/AdsPopUp.csv",
+    "//dcwc/Gear_Character_Development_Config/excel/ItemExpiration.csv",
+    "//dcwc/Gear_Character_Development_Config/excel/Jump.csv",
+    "//dcwc/Gear_Character_Development_Config/excel/RechargePack.csv",
+    "//dcwc/Gear_Character_Development_Config/excel/RechargePackRules.csv",
+    "//dcwc/Gear_Character_Development_Config/excel/Reward.csv",
 ]
 
 // Absolute path to the 2 Workspaces
