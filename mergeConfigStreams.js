@@ -25,12 +25,12 @@ console.log = (...args) => {
 const { execSync } = require('child_process');
 
 // ================= CONFIGURATION =================
-const MY_WORKSPACE = 'Desktop_Merge_Target_Config';
+const MY_WORKSPACE = process.platform === 'win32' ? 'Desktop_Merge_Target_Config' : 'MacbookPro_Merge_Target_Config';
 const WORKSPACE_PATH = process.platform === 'win32' 
     ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Config' 
     : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Config';
 
-const STREAM_PATCH   = '//dcwc/v1_1_14_9_Patch_A_Config';
+const STREAM_PATCH   = '//dcwc/v1_1_14_10_Patch_A_Config';
 const STREAM_PARENT  = '//dcwc/v1_1_14_Parent_Config';
 const STREAM_TRUNK   = '//dcwc/config';
 const STREAM_STAGING = '//dcwc/Gear_Character_Staging_Config';

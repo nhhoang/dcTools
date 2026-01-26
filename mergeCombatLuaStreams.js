@@ -26,7 +26,7 @@ console.log = (...args) => {
 const { execSync } = require('child_process');
 
 // ================= CONFIGURATION =================
-const MY_WORKSPACE = 'Desktop_Merge_Target_Combat_Lua';
+const MY_WORKSPACE = process.platform === 'win32' ? 'Desktop_Merge_Target_Combat_Lua' : 'MacbookPro_Merge_Target_Combat_Lua';
 const WORKSPACE_PATH = process.platform === 'win32' 
     ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Combat_Lua' 
     : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Combat_Lua';
