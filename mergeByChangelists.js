@@ -104,10 +104,10 @@ function getChangedFilesFromCLs(clArray) {
             lines.forEach(line => {
                 line = line.trim();
                 if (line.startsWith('... //')) {
-                    const parts = line.split(/\s+/);
-                    if (parts.length >= 3) {
-                        let depotPath = parts[1].split('#')[0]; 
-                        let action = parts[2];
+                    const match = line.match(/\.\.\.\s+(.+?)#\d+\s+(\S+)$/);
+                    if (match) {
+                        let depotPath = match[1]; 
+                        let action = match[2];
                         
                         if (['add', 'edit', 'delete', 'branch', 'integrate', 'move/add', 'move/delete'].includes(action)) {
                             const isDeleteAction = (action === 'delete' || action === 'move/delete');

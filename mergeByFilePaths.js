@@ -30,15 +30,17 @@ const { execSync } = require('child_process');
 // Absolute path to the file containing the list of CLs
 const CHANGE_LIST_FILE = path.resolve(__dirname, 'changelists.txt');
 const FILE_PATHS = [
-    "//dcwc/Gear_Character_Development_Config/excel/Activity.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/ActivityCollectionReward.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/AdsBanner.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/AdsPopUp.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/ItemExpiration.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/Jump.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/RechargePack.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/RechargePackRules.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/Reward.csv",
+    "//dcwc/Gear_Character_Development_Config/excel/ElseworldAlly.csv", 
+    "//dcwc/Gear_Character_Development_Config/excel/ElseworldHeroGroup.csv", 
+    "//dcwc/Gear_Character_Development_Config/excel/RewardGroup.csv", 
+    "//dcwc/Gear_Character_Development_Config/excel/SocialBossSpecialHero.csv", 
+    "//dcwc/Gear_Character_Development_Combat_Lua/War/PassiveSkill/212290401.lua",
+    "//dcwc/Gear_Character_Development_Config/excel/ActivityAllyBossInfo.csv", 
+    "//dcwc/Gear_Character_Development_Config/excel/Enemies/EnemyEventBoss.csv", 
+    "//dcwc/Gear_Character_Development_Config/excel/EnemyGroup.csv", 
+    "//dcwc/Gear_Character_Development_Config/excel/SkillMonster.csv", 
+    "//dcwc/Gear_Character_Development_Config/excel/Skills/SkillEvent.csv", 
+    "//dcwc/Gear_Character_Development_Config/excel/SkillToken.csv"
 ]
 
 // Absolute path to the 2 Workspaces
