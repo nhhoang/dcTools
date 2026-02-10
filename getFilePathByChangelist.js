@@ -31,7 +31,10 @@ const { validateChangelistArray } = require('./changelistValidator');
 const CHANGE_LIST_FILE = path.resolve(__dirname, 'changelists.txt');
 
 // Source Workspaces
-const SOURCE_WORKSPACE = process.platform === 'win32' 
+const CONFIG_SOURCE_WORKSPACE = process.platform === 'win32' 
+    ? 'C:/Users/hoang/Perforce/Company_Windows_Config' 
+    : '/Users/hoangnguyen/Perforce/Company_MacbookPro_Config'; 
+const CLIENT_SOURCE_WORKSPACE = process.platform === 'win32' 
     ? 'C:/Users/hoang/Perforce/Company_Windows' 
     : '/Users/hoangnguyen/Perforce/Company_MacbookPro'; 
 const COMBAT_LUA_SOURCE_WORKSPACE = process.platform === 'win32' 
@@ -90,7 +93,7 @@ function getChangelistNumbers(filePath) {
      const uniqueCls = [...new Set(cls)];
      
      console.log(`--- Validating ${uniqueCls.length} changelists from file... ---`);
-     const { validCls, warnings } = validateChangelistArray(uniqueCls, SOURCE_WORKSPACE);
+     const { validCls, warnings } = validateChangelistArray(uniqueCls, CONFIG_SOURCE_WORKSPACE);
      
      warnings.forEach(warning => {
          console.warn(warning);
@@ -106,7 +109,7 @@ function getChangedFilesFromCLs(clArray) {
     clArray.forEach(cl => {
         const cmd = `p4 describe -s ${cl}`;
         // Note: Using SOURCE_WORKSPACE as a base to run describe
-        const output = runP4Command(cmd, SOURCE_WORKSPACE);
+        const output = runP4Command(cmd, CONFIG_SOURCE_WORKSPACE);
         
         if (output) {
             const lines = output.split('\n');
@@ -121,14 +124,14 @@ function getChangedFilesFromCLs(clArray) {
                         if (['add', 'edit', 'delete', 'branch', 'integrate', 'move/add', 'move/delete'].includes(action)) {
                             const isDeleteAction = (action === 'delete' || action === 'move/delete');
                             let finalAction = isDeleteAction ? 'delete' : (action === 'add' || action === 'move/add' ? 'add' : 'edit');
-                            
-                            if (!fileActions.has(depotPath)) {
-                                fileActions.set(depotPath, finalAction);
-                                console.log(`Found [NEW]: ${finalAction} ${depotPath} in CL:${cl}`);
-                            } else if (isDeleteAction) {
-                                fileActions.set(depotPath, 'delete');
-                                console.warn(`Found [DELETE OVERWRITE]: delete ${depotPath} in CL:${cl}`);
-                            }
+                            console.log(depotPath)
+                            // if (!fileActions.has(depotPath)) {
+                            //     fileActions.set(depotPath, finalAction);
+                            //     console.log(`Found [NEW]: ${finalAction} ${depotPath} in CL:${cl}`);
+                            // } else if (isDeleteAction) {
+                            //     fileActions.set(depotPath, 'delete');
+                            //     console.warn(`Found [DELETE OVERWRITE]: delete ${depotPath} in CL:${cl}`);
+                            // }
                         }
                     }
                 }
@@ -166,10 +169,10 @@ async function main() {
 
     // 1. Sync all 4 workspaces
     const workspacesToSync = [
-        SOURCE_WORKSPACE, 
-        COMBAT_LUA_SOURCE_WORKSPACE, 
-        CLIENT_TARGET_WORKSPACE, 
-        COMBAT_LUA_TARGET_WORKSPACE
+        // CONFIG_SOURCE_WORKSPACE, 
+        // COMBAT_LUA_SOURCE_WORKSPACE, 
+        // CLIENT_TARGET_WORKSPACE, 
+        // COMBAT_LUA_TARGET_WORKSPACE
     ];
 
     for (const ws of workspacesToSync) {
@@ -190,96 +193,8 @@ async function main() {
     const changedFileObjects = getChangedFilesFromCLs(cls);
     if (changedFileObjects.length === 0) return;
 
-    const clMap = {}; 
-
-    // Helper to get Context (Source & Target) based on path
-    function getFileContext(depotPath) {
-        // if (depotPath.toLowerCase().includes('combat_lua')) {
-        //     return { 
-        //         type: 'COMBAT_LUA', 
-        //         srcWorkspace: COMBAT_LUA_SOURCE_WORKSPACE, 
-        //         targetWorkspace: COMBAT_LUA_TARGET_WORKSPACE 
-        //     };
-        // }
-        return { 
-            type: 'CLIENT', 
-            srcWorkspace: SOURCE_WORKSPACE, 
-            targetWorkspace: CLIENT_TARGET_WORKSPACE 
-        };
-    }
-
-    // 4. Process each file
-    let successCount = 0;
-    for (const fileObj of changedFileObjects) {
-        const depotFile = fileObj.depotPath;
-        const action = fileObj.action;
-        
-        const context = getFileContext(depotFile);
-        const srcWorkspace = context.srcWorkspace;
-        const targetWorkspace = context.targetWorkspace;
-        const targetType = context.type;
-
-        try {
-            // A. Create CL for target if needed
-            if (!clMap[targetType]) {
-                const newCL = createTargetChangelist(targetWorkspace);
-                if (!newCL) throw new Error(`Could not create Changelist for ${targetType}`);
-                clMap[targetType] = newCL;
-                console.log(`>> Target CL created for ${targetType}: ${newCL}`);
-            }
-            const targetCL = clMap[targetType];
-
-            // B. Resolve Local Paths
-            const sourceLocalPath = convertDepotToLocal(depotFile, srcWorkspace);
-            if (!sourceLocalPath) {
-                console.warn(`[SKIP] Could not map depot path to source workspace: ${depotFile}`);
-                continue;
-            }
-
-            // Calculate relative path from Source Workspace root
-            const relativePath = path.relative(srcWorkspace, sourceLocalPath);
-            const targetLocalPath = path.join(targetWorkspace, relativePath);
-            
-            // C. Handle Delete
-            if (action === 'delete') {
-                if (fs.existsSync(targetLocalPath)) {
-                    runP4Command(`p4 delete -c ${targetCL} "${targetLocalPath}"`, targetWorkspace);
-                    try { fs.unlinkSync(targetLocalPath); } catch (e) {}
-                    console.log(`[OK] Deleted (${targetType}): ${relativePath}`);
-                    successCount++;
-                } else {
-                    console.warn(`[SKIP] Delete ignored (not found in target): ${relativePath}`);
-                }
-                continue;
-            }
-
-            // D. Handle Add/Edit
-            if (!fs.existsSync(sourceLocalPath)) {
-                console.warn(`[SKIP] Source file missing: ${sourceLocalPath}`);
-                continue;
-            }
-
-            const targetDir = path.dirname(targetLocalPath);
-            if (!fs.existsSync(targetDir)) fs.mkdirSync(targetDir, { recursive: true });
-
-            if (fs.existsSync(targetLocalPath)) {
-                fs.chmodSync(targetLocalPath, 0o666); 
-                runP4Command(`p4 edit -c ${targetCL} "${targetLocalPath}"`, targetWorkspace);
-            }
-            
-            fs.copyFileSync(sourceLocalPath, targetLocalPath);
-            runP4Command(`p4 reconcile -c ${targetCL} -a -e "${targetLocalPath}"`, targetWorkspace);
-
-            console.log(`[OK] Merged (${targetType}): ${relativePath}`);
-            successCount++;
-
-        } catch (err) {
-            console.error(`[ERROR] Processing ${depotFile}: ${err.message}`);
-        }
-    }
-
     console.log("=== COMPLETE ===");
-    console.log(`Merged ${successCount}/${changedFileObjects.length} files into CLs: ${JSON.stringify(clMap)}.`);
+    console.log(`Merged ${changedFileObjects.length}.`);
 }
 
 main();
