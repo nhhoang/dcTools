@@ -34,15 +34,17 @@ function runP4Command(command, cwd) {
  * @returns {boolean} True if changelist exists and is not a shelved/pending review
  */
 function isValidChangelist(clNumber, workspace) {
-    const cmd = `p4 changes -m 1 -e ${clNumber}`;
+    const cmd = `p4 describe -s ${clNumber}`;
     const output = runP4Command(cmd, workspace);
+
+    // console.log(`===output clNumber: ${clNumber}, output: ${output}, include: ${output.includes(`*pending*`)}`)
     
     if (!output) {
         return false;
     }
     
     // Check if the changelist is found
-    return output.includes(`Change ${clNumber}`);
+    return !output.includes(`*pending*`);
 }
 
 /**
