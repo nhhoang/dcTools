@@ -31,12 +31,12 @@ const WORKSPACE_PATH = process.platform === 'win32'
     ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Combat_Lua' 
     : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Combat_Lua';
 
-const STREAM_PATCH   = '//dcwc/v1_1_14_10_Patch_A_Combat_Lua';
+const STREAM_PATCH   = '//dcwc/v1_1_14_14_Patch_A_Combat_Lua';
 const STREAM_PARENT  = '//dcwc/v1_1_14_Parent_Combat_Lua';
 const STREAM_TRUNK   = '//dcwc/combat_lua';
 const STREAM_STAGING = '//dcwc/Gear_Character_Staging_Combat_Lua';
 
-const CL_DESCRIPTION = '14.10: Merging ';
+const CL_DESCRIPTION = '14.14: Merging ';
 
 // ================= HELPER FUNCTIONS =================
 

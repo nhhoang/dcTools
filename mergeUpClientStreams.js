@@ -31,12 +31,12 @@ const WORKSPACE_PATH = process.platform === 'win32'
     ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Client' 
     : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Client';
 
-const STREAM_PATCH   = '//dcwc/v1_1_14_10_Patch_A_Assets';
+const STREAM_PATCH   = '//dcwc/v1_1_14_14_Patch_A_Assets';
 const STREAM_PARENT  = '//dcwc/v1_1_14_Parent_Client';
 const STREAM_TRUNK   = '//dcwc/trunk';
-const STREAM_STAGING = '//dcwc/Gear_Character_Staging_Client';
+// const STREAM_STAGING = '//dcwc/Gear_Character_Staging_Client';
 
-const CL_DESCRIPTION = '14.10: Merging ';
+const CL_DESCRIPTION = '14.14: Merging ';
 
 // ================= HELPER FUNCTIONS =================
 
@@ -105,7 +105,7 @@ function main() {
     console.log("=== BẮT ĐẦU QUY TRÌNH INTEGRATE & SYNC LIÊN HOÀN ===");
 
     // Bước 1: Staging -> Trunk
-    integrateStream(STREAM_STAGING, STREAM_TRUNK);
+    // integrateStream(STREAM_STAGING, STREAM_TRUNK);
 
     // Bước 2: Trunk -> Patch
     integrateStream(STREAM_TRUNK, STREAM_PATCH);
