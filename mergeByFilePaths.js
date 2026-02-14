@@ -47,13 +47,13 @@ const FILE_PATHS = [
 // Note: Use forward slashes (/) or double backslashes (\\) for Windows paths
 const SOURCE_WORKSPACE = process.platform === 'win32' 
     ? 'C:/Users/hoang/Perforce/Company_Windows_Config' 
-    : '/Users/hoangnguyen/Perforce/Company_MacbookPro_Config'; 
+    : '/Users/hoangnguyen/Perforce/MacbookPro_Config'; 
 const CLIENT_TARGET_WORKSPACE = process.platform === 'win32' 
     ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Config' 
-    : '/Users/hoangnguyen/Perforce/Desktop_Merge_Target_Config';
+    : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Config';
 const COMBAT_LUA_TARGET_WORKSPACE = process.platform === 'win32' 
     ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Combat_Lua' 
-    : '/Users/hoangnguyen/Perforce/Desktop_Merge_Target_Combat_Lua';
+    : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Combat_Lua';
 
 // Description for the new Change List to be created
 const NEW_CL_DESCRIPTION = 'Auto merge files from Source to Target based on CLs';

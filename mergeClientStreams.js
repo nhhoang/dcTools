@@ -31,8 +31,8 @@ const WORKSPACE_PATH = process.platform === 'win32'
     ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Client' 
     : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Client';
 
-const STREAM_PATCH   = '//dcwc/v1_1_14_12_Patch_A_Assets1';
-const STREAM_PARENT  = '//dcwc/v1_1_14_Parent_Client';
+const STREAM_PATCH   = '//dcwc/Gear_v1_1_14_14_Patch_A_Assets';
+const STREAM_PARENT  = '//dcwc/Gear_v1_1_14_Parent_Client';
 const STREAM_TRUNK   = '//dcwc/trunk';
 const STREAM_STAGING = '//dcwc/Gear_Character_Staging_Client';
 
