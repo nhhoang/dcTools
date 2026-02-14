@@ -1,0 +1,14 @@
+{
+  "name": "dc-tools",
+  "version": "1.0.0",
+  "description": "Automation tools for Perforce merging",
+  "scripts": {
+    "merge-up": "node mergeUpAll.js",
+    "merge-up:client": "node mergeUpAll.js CLIENT",
+    "merge-up:combat-lua": "node mergeUpAll.js COMBAT_LUA",
+    "merge-up:config": "node mergeUpAll.js CONFIG",
+    "final-check": "node finalCheck.js"
+  },
+  "author": "Hoang Nguyen",
+  "license": "ISC"
+}
