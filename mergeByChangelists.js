@@ -46,7 +46,7 @@ const COMBAT_LUA_TARGET_WORKSPACE = process.platform === 'win32'
     ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Combat_Lua' 
     : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Combat_Lua';
 
-const NEW_CL_DESCRIPTION = 'Auto merge files from Source to Target based on CLs';
+const NEW_CL_DESCRIPTION = '14.16: Auto merge files from Source to Target based on CLs';
 
 // ================= HELPER FUNCTIONS =================
 
@@ -194,13 +194,13 @@ async function main() {
 
     // Helper to get Context (Source & Target) based on path
     function getFileContext(depotPath) {
-        // if (depotPath.toLowerCase().includes('combat_lua')) {
-        //     return { 
-        //         type: 'COMBAT_LUA', 
-        //         srcWorkspace: COMBAT_LUA_SOURCE_WORKSPACE, 
-        //         targetWorkspace: COMBAT_LUA_TARGET_WORKSPACE 
-        //     };
-        // }
+        if (depotPath.toLowerCase().includes('combat_lua')) {
+            return { 
+                type: 'COMBAT_LUA', 
+                srcWorkspace: COMBAT_LUA_SOURCE_WORKSPACE, 
+                targetWorkspace: COMBAT_LUA_TARGET_WORKSPACE 
+            };
+        }
         return { 
             type: 'CLIENT', 
             srcWorkspace: SOURCE_WORKSPACE, 

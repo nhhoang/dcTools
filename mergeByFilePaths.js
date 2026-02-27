@@ -30,17 +30,8 @@ const { execSync } = require('child_process');
 // Absolute path to the file containing the list of CLs
 const CHANGE_LIST_FILE = path.resolve(__dirname, 'changelists.txt');
 const FILE_PATHS = [
-    "//dcwc/Gear_Character_Development_Config/excel/Activity.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/ActivityResourceBossInfo.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/ActivityResourceBossScore.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/Activity.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/ActivityMiniGameRefresh.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/LeaderboardSub.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/Enemies/EnemyEventBoss.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/Skills/SkillEvent.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/SkillToken.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/RechargeRecPack.csv",
-    "//dcwc/Gear_Character_Development_Config/excel/RechargeRecPackGroup.csv",
+    "//dcwc/Gear_Character_Development_Config/excel/Rewards/Reward_BlackAdam.csv",
+
 ]
 
 // Absolute path to the 2 Workspaces
