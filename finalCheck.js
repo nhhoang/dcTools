@@ -26,21 +26,21 @@ console.log = (...args) => {
 const { execSync } = require('child_process');
 
 // ================= CONFIGURATION =================
-const COMBAT_LUA_WORKSPACE = 'Desktop_Merge_Target_Combat_Lua';
-const CLIENT_WORKSPACE = 'Desktop_Merge_Target_Client';
-const CONFIG_WORKSPACE = 'Desktop_Merge_Target_Config';
-const COMBAT_LUA_WORKSPACE_PATH = process.platform === 'win32' ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Combat_Lua' : '/Users/hoangnguyen/Perforce/Desktop_Merge_Target_Combat_Lua'
-const CLIENT_WORKSPACE_PATH = process.platform === 'win32' ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Client' : '/Users/hoangnguyen/Perforce/Desktop_Merge_Target_Client'
-const CONFIG_WORKSPACE_PATH = process.platform === 'win32' ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Config' : '/Users/hoangnguyen/Perforce/Desktop_Merge_Target_Config'
+const COMBAT_LUA_WORKSPACE = process.platform === 'win32' ? 'Desktop_Merge_Target_Combat_Lua' : 'MacbookPro_Merge_Target_Combat_Lua'
+const CLIENT_WORKSPACE = process.platform === 'win32' ? 'Desktop_Merge_Target_Client' : 'MacbookPro_Merge_Target_Combat_Lua'
+const CONFIG_WORKSPACE = process.platform === 'win32' ? 'Desktop_Merge_Target_Config' : 'MacbookPro_Merge_Target_Combat_Lua'
+const COMBAT_LUA_WORKSPACE_PATH = process.platform === 'win32' ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Combat_Lua' : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Combat_Lua'
+const CLIENT_WORKSPACE_PATH = process.platform === 'win32' ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Client' : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Client'
+const CONFIG_WORKSPACE_PATH = process.platform === 'win32' ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Config' : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Config'
 
-const COMBAT_LUA_SOURCE_STREAM = '//dcwc/v1_1_14_10_Patch_A_Combat_Lua_Revert1'
-const COMBAT_LUA_TARGET_STREAM = '//dcwc/v1_1_14_11_Patch_A_Combat_Lua'
+const COMBAT_LUA_SOURCE_STREAM = '//dcwc/Gear_v1_1_14_15_Patch_A_Combat_Lua'
+const COMBAT_LUA_TARGET_STREAM = '//dcwc/Gear_v1_1_14_16_Patch_A_Combat_Lua'
 
-const CLIENT_SOURCE_STREAM = '//dcwc/v1_1_14_10_Patch_A_Assets_Revert1'
-const CLIENT_TARGET_STREAM = '//dcwc/v1_1_14_11_Patch_A_Assets'
+const CLIENT_SOURCE_STREAM = '//dcwc/Gear_v1_1_14_15_Patch_A_Assets'
+const CLIENT_TARGET_STREAM = '//dcwc/Gear_v1_1_14_16_Patch_A_Assets'
     
-const CONFIG_SOURCE_STREAM = '//dcwc/v1_1_14_10_Patch_A_Config'
-const CONFIG_TARGET_STREAM = '//dcwc/v1_1_14_11_Patch_A_Config'
+const CONFIG_SOURCE_STREAM = '//dcwc/Gear_v1_1_14_15_Patch_A_Config'
+const CONFIG_TARGET_STREAM = '//dcwc/Gear_v1_1_14_16_Patch_A_Config'
 
 const CL_DESCRIPTION = 'Auto integrate downstream with Sync';
 
