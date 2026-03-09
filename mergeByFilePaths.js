@@ -30,7 +30,9 @@ const { execSync } = require('child_process');
 // Absolute path to the file containing the list of CLs
 const CHANGE_LIST_FILE = path.resolve(__dirname, 'changelists.txt');
 const FILE_PATHS = [
-    "//dcwc/Gear_Character_Development_Config/excel/Rewards/Reward_BlackAdam.csv",
+
+"//dcwc/Gear_Character_Development_Config/excel/Language/SourceBattleDesc.csv",
+"//dcwc/Gear_Character_Development_Config/excel/Skills/SkillCollection.csv",
 
 ]
 
