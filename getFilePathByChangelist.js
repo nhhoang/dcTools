@@ -108,7 +108,6 @@ function getChangedFilesFromCLs(clArray) {
 
     clArray.forEach(cl => {
         const cmd = `p4 describe -s ${cl}`;
-        // Note: Using SOURCE_WORKSPACE as a base to run describe
         const output = runP4Command(cmd, CONFIG_SOURCE_WORKSPACE);
         
         if (output) {
@@ -124,20 +123,26 @@ function getChangedFilesFromCLs(clArray) {
                         if (['add', 'edit', 'delete', 'branch', 'integrate', 'move/add', 'move/delete'].includes(action)) {
                             const isDeleteAction = (action === 'delete' || action === 'move/delete');
                             let finalAction = isDeleteAction ? 'delete' : (action === 'add' || action === 'move/add' ? 'add' : 'edit');
-                            console.log(depotPath)
-                            // if (!fileActions.has(depotPath)) {
-                            //     fileActions.set(depotPath, finalAction);
-                            //     console.log(`Found [NEW]: ${finalAction} ${depotPath} in CL:${cl}`);
-                            // } else if (isDeleteAction) {
-                            //     fileActions.set(depotPath, 'delete');
-                            //     console.warn(`Found [DELETE OVERWRITE]: delete ${depotPath} in CL:${cl}`);
-                            // }
+
+                            // --- LOGIC CHỈ LOG FILE UNIQUE TẠI ĐÂY ---
+                            if (!fileActions.has(depotPath)) {
+                                // Nếu Map chưa có path này, tức là lần đầu tiên bắt gặp file này
+                                fileActions.set(depotPath, finalAction);
+                                console.log(`${depotPath}`);
+                            } else {
+                                // Nếu đã có rồi, ta có thể cập nhật action nếu cần (ví dụ ưu tiên ghi đè bằng action 'delete')
+                                if (isDeleteAction) {
+                                    fileActions.set(depotPath, 'delete');
+                                }
+                            }
                         }
                     }
                 }
             });
         }
     });
+
+    console.log(`--- Scan complete. Total unique files: ${fileActions.size} ---`);
     return Array.from(fileActions, ([depotPath, action]) => ({ depotPath, action }));
 }
 

@@ -31,12 +31,12 @@ const WORKSPACE_PATH = process.platform === 'win32'
     ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Client' 
     : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Client';
 
-const STREAM_PATCH   = '//dcwc/Gear_v1_1_14_17_Patch_A_Assets';
-const STREAM_PARENT  = '//dcwc/Gear_v1_1_14_Parent_Client';
+const STREAM_PATCH   = '//dcwc/Gear_v1_1_15_1_Patch_A_Assets';
+const STREAM_PARENT  = '//dcwc/Gear_v1_1_15_Parent_Client';
 const STREAM_TRUNK   = '//dcwc/trunk';
 const STREAM_STAGING = '//dcwc/Gear_Character_Staging_Client';
 
-const CL_DESCRIPTION = '14.17: Merging ';
+const CL_DESCRIPTION = '15.1: Merging ';
 
 // ================= HELPER FUNCTIONS =================
 

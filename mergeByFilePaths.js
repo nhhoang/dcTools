@@ -31,8 +31,10 @@ const { execSync } = require('child_process');
 const CHANGE_LIST_FILE = path.resolve(__dirname, 'changelists.txt');
 const FILE_PATHS = [
 
-"//dcwc/Gear_Character_Development_Config/excel/Language/SourceBattleDesc.csv",
-"//dcwc/Gear_Character_Development_Config/excel/Skills/SkillCollection.csv",
+"//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationCommonUI.csv", 
+"//dcwc/Gear_Character_Development_Config/excel/Language/SourceCommonUI.csv", 
+"//dcwc/Gear_Character_Development_Config/excel/Language/SourceCommonDesc.csv", 
+"//dcwc/Gear_Character_Development_Config/excel/Skill.csv", 
 
 ]
 

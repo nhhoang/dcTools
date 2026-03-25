@@ -32,10 +32,10 @@ const CHANGE_LIST_FILE = path.resolve(__dirname, 'changelists.txt');
 
 // Source Workspaces
 const SOURCE_WORKSPACE = process.platform === 'win32' 
-    ? 'C:/Users/hoang/Perforce/Company_Windows' 
+    ? 'C:/Users/hoang/Perforce/Source_Merge_Client' 
     : '/Users/hoangnguyen/Perforce/MacbookPro'; 
 const COMBAT_LUA_SOURCE_WORKSPACE = process.platform === 'win32' 
-    ? 'C:/Users/hoang/Perforce/Company_Windows_Combat_Lua' 
+    ? 'C:/Users/hoang/Perforce/Source_Merge_Combat_Lua' 
     : '/Users/hoangnguyen/Perforce/MacbookPro_Combat_Lua';
 
 // Target Workspaces
