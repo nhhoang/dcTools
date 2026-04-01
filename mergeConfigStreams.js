@@ -25,9 +25,9 @@ console.log = (...args) => {
 const { execSync } = require('child_process');
 
 // ================= CONFIGURATION =================
-const MY_WORKSPACE = process.platform === 'win32' ? 'Desktop_Merge_Target_Config' : 'MacbookPro_Merge_Target_Config';
+const MY_WORKSPACE = process.platform === 'win32' ? 'merge_target_config' : 'MacbookPro_Merge_Target_Config';
 const WORKSPACE_PATH = process.platform === 'win32' 
-    ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Config' 
+    ? 'D:/Perforce/merge_target_config' 
     : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Config';
 
 const STREAM_PATCH   = '//dcwc/Gear_v1_1_15_1_Patch_A_Config';

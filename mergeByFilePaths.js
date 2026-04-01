@@ -42,13 +42,13 @@ const FILE_PATHS = [
 // Absolute path to the 2 Workspaces
 // Note: Use forward slashes (/) or double backslashes (\\) for Windows paths
 const SOURCE_WORKSPACE = process.platform === 'win32' 
-    ? 'C:/Users/hoang/Perforce/Company_Windows_Config' 
+    ? 'D:/Perforce/source_merge_client_Config' 
     : '/Users/hoangnguyen/Perforce/MacbookPro_Config'; 
 const CLIENT_TARGET_WORKSPACE = process.platform === 'win32' 
-    ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Config' 
+    ? 'D:/Perforce/merge_target_config' 
     : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Config';
 const COMBAT_LUA_TARGET_WORKSPACE = process.platform === 'win32' 
-    ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Combat_Lua' 
+    ? 'D:/Perforce/merge_target_combat_lua' 
     : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Combat_Lua';
 
 // Description for the new Change List to be created

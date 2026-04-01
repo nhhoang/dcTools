@@ -16,8 +16,8 @@ const IS_WIN = PLATFORM === 'win32';
 // Base Configs
 const BASE_CONFIGS = {
     CLIENT: {
-        workspace: IS_WIN ? 'Desktop_Merge_Target_Client' : 'MacbookPro_Merge_Target_Client',
-        cwd: IS_WIN ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Client' : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Client',
+        workspace: IS_WIN ? 'merge_target_client' : 'MacbookPro_Merge_Target_Client',
+        cwd: IS_WIN ? 'D:/Perforce/merge_target_client' : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Client',
         streams: {
             staging: '//dcwc/Gear_Character_Staging_Client',
             trunk:   '//dcwc/trunk',
@@ -26,8 +26,8 @@ const BASE_CONFIGS = {
         }
     },
     COMBAT_LUA: {
-        workspace: IS_WIN ? 'Desktop_Merge_Target_Combat_Lua' : 'MacbookPro_Merge_Target_Combat_Lua',
-        cwd: IS_WIN ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Combat_Lua' : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Combat_Lua',
+        workspace: IS_WIN ? 'merge_target_combat_lua' : 'MacbookPro_Merge_Target_Combat_Lua',
+        cwd: IS_WIN ? 'D:/Perforce/merge_target_combat_lua' : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Combat_Lua',
         streams: {
             staging: '//dcwc/Gear_Character_Staging_Combat_Lua',
             trunk:   '//dcwc/combat_lua',
@@ -36,8 +36,8 @@ const BASE_CONFIGS = {
         }
     },
     CONFIG: {
-        workspace: IS_WIN ? 'Desktop_Merge_Target_Config' : 'MacbookPro_Merge_Target_Config',
-        cwd: IS_WIN ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Config' : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Config',
+        workspace: IS_WIN ? 'merge_target_config' : 'MacbookPro_Merge_Target_Config',
+        cwd: IS_WIN ? 'D:/Perforce/merge_target_config' : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Config',
         streams: {
             staging: '//dcwc/Gear_Character_Staging_Config',
             trunk:   '//dcwc/config',

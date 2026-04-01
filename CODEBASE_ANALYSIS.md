@@ -65,12 +65,12 @@ The scripts interact with multiple Perforce workspaces organized by content type
 
 | Workspace Type | Windows Path | Mac Path | Purpose |
 |----------------|--------------|----------|---------|
-| **Company_Windows** | `C:/Users/hoang/Perforce/Company_Windows` | `/Users/hoangnguyen/Perforce/Company_MacbookPro` | Main client source |
+| **Company_Windows** | `D:/Perforce/source_merge_client` | `/Users/hoangnguyen/Perforce/Company_MacbookPro` | Main client source |
 | **Company_Windows_Config** | Same pattern | Same pattern | Configuration files source |
 | **Company_Windows_Combat_Lua** | Same pattern | Same pattern | Combat Lua scripts source |
-| **Desktop_Merge_Target_Client** | Same pattern | `MacbookPro_Merge_Target_Client` | Client merge target |
-| **Desktop_Merge_Target_Config** | Same pattern | Same pattern | Config merge target |
-| **Desktop_Merge_Target_Combat_Lua** | Same pattern | Same pattern | Combat Lua merge target |
+| **merge_target_client** | Same pattern | `MacbookPro_Merge_Target_Client` | Client merge target |
+| **merge_target_config** | Same pattern | Same pattern | Config merge target |
+| **merge_target_combat_lua** | Same pattern | Same pattern | Combat Lua merge target |
 
 ### Stream Structure
 
@@ -148,7 +148,7 @@ All scripts support both Windows and macOS:
 
 ```javascript
 const WORKSPACE_PATH = process.platform === 'win32' 
-    ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Client' 
+    ? 'D:/Perforce/merge_target_client' 
     : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Client';
 ```
 

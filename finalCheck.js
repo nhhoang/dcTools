@@ -26,12 +26,12 @@ console.log = (...args) => {
 const { execSync } = require('child_process');
 
 // ================= CONFIGURATION =================
-const COMBAT_LUA_WORKSPACE = process.platform === 'win32' ? 'Desktop_Merge_Target_Combat_Lua' : 'MacbookPro_Merge_Target_Combat_Lua'
-const CLIENT_WORKSPACE = process.platform === 'win32' ? 'Desktop_Merge_Target_Client' : 'MacbookPro_Merge_Target_Combat_Lua'
-const CONFIG_WORKSPACE = process.platform === 'win32' ? 'Desktop_Merge_Target_Config' : 'MacbookPro_Merge_Target_Combat_Lua'
-const COMBAT_LUA_WORKSPACE_PATH = process.platform === 'win32' ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Combat_Lua' : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Combat_Lua'
-const CLIENT_WORKSPACE_PATH = process.platform === 'win32' ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Client' : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Client'
-const CONFIG_WORKSPACE_PATH = process.platform === 'win32' ? 'C:/Users/hoang/Perforce/Desktop_Merge_Target_Config' : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Config'
+const COMBAT_LUA_WORKSPACE = process.platform === 'win32' ? 'merge_target_combat_lua' : 'MacbookPro_Merge_Target_Combat_Lua'
+const CLIENT_WORKSPACE = process.platform === 'win32' ? 'merge_target_client' : 'MacbookPro_Merge_Target_Combat_Lua'
+const CONFIG_WORKSPACE = process.platform === 'win32' ? 'merge_target_config' : 'MacbookPro_Merge_Target_Combat_Lua'
+const COMBAT_LUA_WORKSPACE_PATH = process.platform === 'win32' ? 'D:/Perforce/merge_target_combat_lua' : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Combat_Lua'
+const CLIENT_WORKSPACE_PATH = process.platform === 'win32' ? 'D:/Perforce/merge_target_client' : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Client'
+const CONFIG_WORKSPACE_PATH = process.platform === 'win32' ? 'D:/Perforce/merge_target_config' : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Config'
 
 const COMBAT_LUA_SOURCE_STREAM = '//dcwc/Gear_v1_1_14_16_Patch_A_Combat_Lua'
 const COMBAT_LUA_TARGET_STREAM = '//dcwc/Gear_v1_1_14_17_Patch_A_Combat_Lua'
