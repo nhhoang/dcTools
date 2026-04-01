@@ -1,0 +1,5 @@
+P4CLIENT=MacbookPro
+P4USER=x.hoang.nguyenhuy
+P4PASSWD=aAasd!23456789
+P4PORT=sfo-perforce-01.wbiegames.com:1666
+P4IGNORE=.p4ignore
