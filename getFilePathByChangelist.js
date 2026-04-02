@@ -128,7 +128,7 @@ function getChangedFilesFromCLs(clArray) {
                             if (!fileActions.has(depotPath)) {
                                 // Nếu Map chưa có path này, tức là lần đầu tiên bắt gặp file này
                                 fileActions.set(depotPath, finalAction);
-                                console.log(`${depotPath}`);
+                                console.log(`${depotPath} - ${cl}`);
                             } else {
                                 // Nếu đã có rồi, ta có thể cập nhật action nếu cần (ví dụ ưu tiên ghi đè bằng action 'delete')
                                 if (isDeleteAction) {

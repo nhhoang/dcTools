@@ -1,7 +1,7 @@
 {
   "character": {
-    "epic": [],
-    "legendary": [{"id": "13132", "name": "Joker"}]
+    "epic": [{"id": "13232", "name": "YaraFlor"}],
+    "legendary": [{"id": "13233", "name": "Artemis"}]
   },
   "reinforcement": [],
   "artifact": []
