@@ -31,7 +31,7 @@ const WORKSPACE_PATH = process.platform === 'win32'
     ? 'D:/Perforce/merge_target_combat_lua' 
     : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Combat_Lua';
 
-const STREAM_PATCH   = '//dcwc/Gear_v1_1_15_1_Patch_A_Combat_Lua';
+const STREAM_PATCH   = '//dcwc/Gear_v1_1_15_2_Patch_A_Combat_Lua';
 const STREAM_PARENT  = '//dcwc/Gear_v1_1_15_Parent_Combat_Lua';
 const STREAM_TRUNK   = '//dcwc/combat_lua';
 const STREAM_STAGING = '//dcwc/Gear_Character_Staging_Combat_Lua';
@@ -90,7 +90,7 @@ function integrateStream(sourceStream, targetStream) {
         
         // 5. Resolve
         console.log(`   Resolving files (Auto-Safe)...`);
-        runP4Command(`p4 resolve -c ${clId} -am -dw`, WORKSPACE_PATH);
+        runP4Command(`p4 resolve -c ${clId} -at -dw`, WORKSPACE_PATH);
         
         console.log(`   ✨ Hoàn tất integrate vào ${targetStream}.`);
     } else {

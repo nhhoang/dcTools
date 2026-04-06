@@ -31,21 +31,18 @@ const { execSync } = require('child_process');
 const CHANGE_LIST_FILE = path.resolve(__dirname, 'changelists.txt');
 const FILE_PATHS = [
 
-"//dcwc/Gear_Character_Development_Config/excel/InfArenaBuff.csv", 
-"//dcwc/Gear_Character_Development_Config/excel/Language/SourceCharacterUI.csv", 
-"//dcwc/Gear_Character_Development_Config/excel/Skills/SkillWorldwarEliteArena.csv", 
-"//dcwc/Gear_Character_Development_Config/excel/Rewards/Reward_YaraFlor.csv", 
-"//dcwc/Gear_Character_Development_Client/Assets/Lua/Modules/BattleUI/BattleHeroHead.lua", 
-"//dcwc/Gear_Character_Development_Client/Assets/Res/Prefabs/UI/BattleUI/Editor/BattleHeroHead.prefab", 
-"//dcwc/Gear_Character_Development_Config/excel/Enemies/EnemyEventBoss.csv", 
-"//dcwc/Gear_Character_Development_Config/excel/Skills/SkillEvent.csv",
+"//dcwc/Gear_Character_Development_Config/excel/RechargePack.csv",
+"//dcwc/Gear_Character_Development_Config/excel/BadgeSkill.csv",
+"//dcwc/Gear_Character_Development_Config/excel/Language/SourceBattleDesc.csv",
+"//dcwc/Gear_Character_Development_Config/excel/Skill.csv",
+"//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationBattleDesc.csv",
 
 ]
 
 // Absolute path to the 2 Workspaces
 // Note: Use forward slashes (/) or double backslashes (\\) for Windows paths
 const SOURCE_WORKSPACE = process.platform === 'win32' 
-    ? 'D:/Perforce/source_merge_config' 
+    ? 'D:/Perforce/source_merge_client_Config' 
     : '/Users/hoangnguyen/Perforce/MacbookPro_Config'; 
 const CLIENT_TARGET_WORKSPACE = process.platform === 'win32' 
     ? 'D:/Perforce/merge_target_config' 
