@@ -31,9 +31,11 @@ const { execSync } = require('child_process');
 const CHANGE_LIST_FILE = path.resolve(__dirname, 'changelists.txt');
 const FILE_PATHS = [
 
-"//dcwc/Gear_Character_Development_Config/excel/InfArenaBuff.csv",
-"//dcwc/Gear_Character_Development_Config/excel/Language/SourceCharacterUI.csv",
-"//dcwc/Gear_Character_Development_Config/excel/Skills/SkillWorldwarEliteArena.csv",
+"//dcwc/Gear_Character_Development_Config/excel/RechargePack.csv",
+"//dcwc/Gear_Character_Development_Config/excel/BadgeSkill.csv",
+"//dcwc/Gear_Character_Development_Config/excel/Language/SourceBattleDesc.csv",
+"//dcwc/Gear_Character_Development_Config/excel/Skill.csv",
+"//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationBattleDesc.csv",
 
 ]
 
