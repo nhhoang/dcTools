@@ -25,7 +25,7 @@ const SOURCE_WORKSPACE = process.platform === 'win32'
     ? 'D:/Perforce/source_merge_client' 
     : '/Users/hoangnguyen/Perforce/MacbookPro'; 
 const COMBAT_LUA_SOURCE_WORKSPACE = process.platform === 'win32' 
-    ? 'D:/Perforce/source_merge_client_Combat_Lua' 
+    ? 'D:/Perforce/source_merge_combat_lua' 
     : '/Users/hoangnguyen/Perforce/MacbookPro_Combat_Lua';
 
 const CLIENT_TARGET_WORKSPACE = process.platform === 'win32' 

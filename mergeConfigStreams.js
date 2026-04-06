@@ -107,7 +107,7 @@ function main() {
     integrateStream(STREAM_PATCH, STREAM_TRUNK);
 
     // Bước 2: Parent -> Trunk
-    // integrateStream(STREAM_PARENT, STREAM_TRUNK);
+    integrateStream(STREAM_PARENT, STREAM_TRUNK);
 
     // Bước 3: Trunk -> Staging
     integrateStream(STREAM_TRUNK, STREAM_STAGING);

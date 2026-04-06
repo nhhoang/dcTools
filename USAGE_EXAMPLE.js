@@ -13,7 +13,7 @@ const {
 
 // Example 1: Check if a single changelist is valid
 console.log("\n=== Example 1: Validate a Single Changelist ===");
-const workspace = 'D:/Perforce/source_merge_client_Config';
+const workspace = 'D:/Perforce/source_merge_config';
 const clNumber = '12345';
 
 const result = validateAndResolveChangelist(clNumber, workspace);
