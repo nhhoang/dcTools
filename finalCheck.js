@@ -33,14 +33,14 @@ const COMBAT_LUA_WORKSPACE_PATH = process.platform === 'win32' ? 'D:/Perforce/me
 const CLIENT_WORKSPACE_PATH = process.platform === 'win32' ? 'D:/Perforce/merge_target_client' : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Client'
 const CONFIG_WORKSPACE_PATH = process.platform === 'win32' ? 'D:/Perforce/merge_target_config' : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Config'
 
-const COMBAT_LUA_SOURCE_STREAM = '//dcwc/Gear_v1_1_14_16_Patch_A_Combat_Lua'
-const COMBAT_LUA_TARGET_STREAM = '//dcwc/Gear_v1_1_14_17_Patch_A_Combat_Lua'
+const COMBAT_LUA_SOURCE_STREAM = '//dcwc/Gear_v1_1_15_2_Patch_A_Combat_Lua'
+const COMBAT_LUA_TARGET_STREAM = '//dcwc/Gear_v1_1_15_3_Patch_A_Combat_Lua'
 
-const CLIENT_SOURCE_STREAM = '//dcwc/Gear_v1_1_14_16_Patch_A_Assets'
-const CLIENT_TARGET_STREAM = '//dcwc/Gear_v1_1_14_17_Patch_A_Assets'
+const CLIENT_SOURCE_STREAM = '//dcwc/Gear_v1_1_15_2_Patch_A_Assets'
+const CLIENT_TARGET_STREAM = '//dcwc/Gear_v1_1_15_3_Patch_A_Assets'
     
-const CONFIG_SOURCE_STREAM = '//dcwc/Gear_v1_1_14_16_Patch_A_Config'
-const CONFIG_TARGET_STREAM = '//dcwc/Gear_v1_1_14_17_Patch_A_Config'
+const CONFIG_SOURCE_STREAM = '//dcwc/Gear_v1_1_15_2_Patch_A_Config'
+const CONFIG_TARGET_STREAM = '//dcwc/Gear_v1_1_15_3_Patch_A_Config'
 
 const CL_DESCRIPTION = 'Auto integrate downstream with Sync';
 
