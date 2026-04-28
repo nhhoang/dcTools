@@ -89,7 +89,7 @@ function integrateStream(sourceStream, targetStream) {
         
         // 5. Resolve
         console.log(`   Resolving files (Auto-Safe)...`);
-        runP4Command(`p4 resolve -c ${clId} -at -dw`, WORKSPACE_PATH);
+        runP4Command(`p4 resolve -c ${clId} -am -dw`, WORKSPACE_PATH);
         
         console.log(`   ✨ Hoàn tất integrate vào ${targetStream}.`);
     } else {
@@ -104,7 +104,7 @@ function main() {
     console.log("=== BẮT ĐẦU QUY TRÌNH INTEGRATE & SYNC LIÊN HOÀN ===");
 
     // Bước 1: Patch -> Parent
-    // integrateStream(STREAM_PATCH, STREAM_PARENT);
+    integrateStream(STREAM_PATCH, STREAM_PARENT);
 
     // Bước 2: Parent -> Trunk
     integrateStream(STREAM_PATCH, STREAM_TRUNK);
