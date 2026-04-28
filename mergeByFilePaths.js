@@ -31,8 +31,9 @@ const { execSync } = require('child_process');
 const CHANGE_LIST_FILE = path.resolve(__dirname, 'changelists.txt');
 const FILE_PATHS = [
 
-"//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationActivityUI.csv",
-"//dcwc/Gear_Character_Development_Config/excel/Language/SourceActivityUI.csv",
+"//dcwc/Gear_Character_Development_Config/excel/RechargePack.csv",
+"//dcwc/Gear_Character_Development_Config/excel/Item.csv",
+"//dcwc/Gear_Character_Development_Config/excel/Language/SourceBattleDesc.csv",
 
 ]
 

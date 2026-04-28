@@ -78,13 +78,12 @@ function getChangedFilesFromCLs(clArray) {
             lines.forEach(line => {
                 line = line.trim();
                 // Regex bắt Depot Path có dấu cách: ... //depot/path/file name.txt#1 action
-                const match = line.match(/^\.\.\.\s+(.+?)#\d+\s+(\w+)$/);
+                const match = line.match(/^\.\.\.\s+(.+?)#\d+\s+(\S+)$/);
                 if (match) {
                     const depotPath = match[1].trim(); 
                     const action = match[2].trim();
                     const isDelete = ['delete', 'move/delete'].includes(action);
                     const finalAction = isDelete ? 'delete' : (['add', 'move/add'].includes(action) ? 'add' : 'edit');
-                    
                     if (!fileActions.has(depotPath) || isDelete) {
                         fileActions.set(depotPath, finalAction);
                     }
