@@ -30,10 +30,11 @@ const { execSync } = require('child_process');
 // Absolute path to the file containing the list of CLs
 const CHANGE_LIST_FILE = path.resolve(__dirname, 'changelists.txt');
 const FILE_PATHS = [
-
 "//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationActivityUI.csv", 
-"//dcwc/Gear_Character_Development_Config/excel/Language/SourceActivityUI.csv", 
-
+"//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationCommonDesc.csv", 
+"//dcwc/Gear_Character_Development_Config/excel/Language/SourceCommonDesc.csv", 
+"//dcwc/Gear_Character_Development_Config/excel/TaskActivity.csv", 
+"//dcwc/Gear_Character_Development_Config/excel/TaskInfo.csv", 
 ]
 
 // Absolute path to the 2 Workspaces
