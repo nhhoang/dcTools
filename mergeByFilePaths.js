@@ -30,13 +30,10 @@ const { execSync } = require('child_process');
 // Absolute path to the file containing the list of CLs
 const CHANGE_LIST_FILE = path.resolve(__dirname, 'changelists.txt');
 const FILE_PATHS = [
-"//dcwc/Gear_Character_Development_Config/excel/AllyInfo.csv", 
-"//dcwc/Gear_Character_Development_Config/excel/Skill.csv", 
-"//dcwc/Gear_Character_Development_Config/excel/Profile.csv", 
-"//dcwc/Gear_Character_Development_Config/excel/ShareImage.csv", 
-"//dcwc/Gear_Character_Development_Config/excel/Enemies/EnemyEventBoss.csv", 
-"//dcwc/Gear_Character_Development_Config/excel/Skills/SkillEvent.csv", 
 "//dcwc/Gear_Character_Development_Config/excel/AllyCharacter.csv", 
+"//dcwc/Gear_Character_Development_Config/excel/Dialog.csv", 
+"//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationEnglishSource.csv", 
+"//dcwc/Gear_Character_Development_Config/excel/Language/SourceEnglishSource.csv", 
 ]
 
 // Absolute path to the 2 Workspaces
