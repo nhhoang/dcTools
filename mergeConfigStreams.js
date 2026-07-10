@@ -30,8 +30,8 @@ const WORKSPACE_PATH = process.platform === 'win32'
     ? 'D:/Perforce/merge_target_config' 
     : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Config';
 
-const STREAM_PATCH   = '//dcwc/Gear_v1_1_15_5_Patch_A_Config';
-const STREAM_PARENT  = '//dcwc/Gear_v1_1_15_Parent_Config';
+const STREAM_PATCH   = '//dcwc/Gear_v1_1_16_1_Patch_A_Config';
+const STREAM_PARENT  = '//dcwc/Gear_v1_1_16_Parent_Config';
 const STREAM_TRUNK   = '//dcwc/config';
 const STREAM_STAGING = '//dcwc/Gear_Character_Staging_Config';
 

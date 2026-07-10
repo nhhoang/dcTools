@@ -30,10 +30,10 @@ const COMBAT_LUA_SOURCE_WORKSPACE = process.platform === 'win32'
 
 const CLIENT_TARGET_WORKSPACE = process.platform === 'win32' 
     ? 'D:/Perforce/merge_target_client' 
-    : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Client'; 
+    : '/Users/hoangnguyen/Perforce/merge-client'; 
 const COMBAT_LUA_TARGET_WORKSPACE = process.platform === 'win32' 
     ? 'D:/Perforce/merge_target_combat_lua' 
-    : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Combat_Lua';
+    : '/Users/hoangnguyen/Perforce/merge-combat-lua';
 
 const NEW_CL_DESCRIPTION = 'Auto merge files from Source to Target based on CLs';
 

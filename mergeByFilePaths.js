@@ -30,13 +30,19 @@ const { execSync } = require('child_process');
 // Absolute path to the file containing the list of CLs
 const CHANGE_LIST_FILE = path.resolve(__dirname, 'changelists.txt');
 const FILE_PATHS = [
-"//dcwc/Gear_Character_Development_Config/excel/AllyInfo.csv", 
-"//dcwc/Gear_Character_Development_Config/excel/Skill.csv", 
-"//dcwc/Gear_Character_Development_Config/excel/Profile.csv", 
-"//dcwc/Gear_Character_Development_Config/excel/ShareImage.csv", 
-"//dcwc/Gear_Character_Development_Config/excel/Enemies/EnemyEventBoss.csv", 
-"//dcwc/Gear_Character_Development_Config/excel/Skills/SkillEvent.csv", 
-"//dcwc/Gear_Character_Development_Config/excel/AllyCharacter.csv", 
+ "//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationActivityUI.csv",
+ "//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationBattleDesc.csv",
+ "//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationCharacterUI.csv",
+ "//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationCommonDesc.csv",
+ "//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationCommonUI.csv",
+ "//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationDrama.csv",
+ "//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationEnglishSource.csv",
+ "//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationErrorCode.csv",
+ "//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationItemDesc.csv",
+ "//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationServer.csv",
+ "//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationShopUI.csv",
+ "//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationStoreUI.csv",
+
 ]
 
 // Absolute path to the 2 Workspaces
@@ -46,7 +52,7 @@ const SOURCE_WORKSPACE = process.platform === 'win32'
     : '/Users/hoangnguyen/Perforce/MacbookPro_Config'; 
 const CLIENT_TARGET_WORKSPACE = process.platform === 'win32' 
     ? 'D:/Perforce/merge_target_config' 
-    : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Config';
+    : '/Users/hoangnguyen/Perforce/merge-config';
 const COMBAT_LUA_TARGET_WORKSPACE = process.platform === 'win32' 
     ? 'D:/Perforce/merge_target_combat_lua' 
     : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Combat_Lua';
