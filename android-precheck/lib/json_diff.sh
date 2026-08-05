@@ -147,7 +147,9 @@ diff_apk_vs_expected() {
         _append "$(_diff_one sdk "$k" "$e" "$a")"
     done
 
-    # ---- signing: sha256/sha1/md5/subjectDN/verified ----
+    # ---- signing: sha256/sha1/md5/subjectDN/verified (v2-aware) ----
+    local _v2_signed_with="${SIGNED_WITH:-}"
+    local _v2_skip_signing="${SKIP_SIGNING:-0}"
     for k in sha256 sha1 md5 subjectDN verified; do
         local a e
         a=$(echo "$actual" | jq -r --arg k "$k" '
@@ -158,6 +160,22 @@ diff_apk_vs_expected() {
             (.expected_signing // {}) as $signing
             | if ($signing | has($k)) then ($signing[$k] | tostring) else "" end
         ')
+        # v2: --skip-signing forces WARN for every signing/* check
+        if [ "$_v2_skip_signing" = "1" ]; then
+            _append "$(jq -n --arg k "$k" --arg a "$a" \
+                '{category:"signing", check:$k, status:"WARN",
+                  expected:"(skipped)", actual:$a,
+                  message:"signing check skipped via --skip-signing"}')"
+            continue
+        fi
+        # v2: debug-keystore auto-fill for sha256 (per spec §5.2)
+        if [ "$k" = "sha256" ] && [ -z "$e" ] && [ "$_v2_signed_with" = "debug_keystore" ]; then
+            _append "$(jq -n --arg a "$a" \
+                '{category:"signing", check:"sha256", status:"WARN",
+                  expected:"(unset)", actual:$a,
+                  message:"auto-filled from debug keystore; replace with upload key SHA-256 before release"}')"
+            continue
+        fi
         _append "$(_diff_one signing "$k" "$e" "$a")"
     done
 
