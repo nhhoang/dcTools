@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Automation tools for Perforce merging",
   "scripts": {
+    "merge": "node merge.js",
     "merge-up": "node mergeUpAll.js",
     "merge-up:client": "node mergeUpAll.js CLIENT",
     "merge-up:combat-lua": "node mergeUpAll.js COMBAT_LUA",

@@ -1,0 +1,17 @@
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): false
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Signer #1 certificate DN: CN=Team Leads, OU=WBSF, O=WB Games, L=San Francisco, ST=California, C=US
+Signer #1 certificate SHA-256 digest: b46acd3981297ed08d84531a9de00543510ef1413a6ae667b9bf487cf23293c4
+Signer #1 certificate SHA-1 digest: 5e455590db0114a063fd8fc8f620299087aa223c
+Signer #1 certificate MD5 digest: f9189ba8366331d299d08304a7e311a3
+Signer #1 key algorithm: RSA
+Signer #1 key size (bits): 2048
+Signer #1 public key SHA-256 digest: 5b8b7c96dada3d4ff9d9b0c4820409a432c05570abb885a512ed125c77c9335c
+Signer #1 public key SHA-1 digest: 368090a0914ffa548253d73b90928bc9c5043b60
+Signer #1 public key MD5 digest: 6981e85e2f4b223521a18ac16245263a

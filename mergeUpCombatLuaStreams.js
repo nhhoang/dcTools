@@ -26,17 +26,17 @@ console.log = (...args) => {
 const { execSync } = require('child_process');
 
 // ================= CONFIGURATION =================
-const MY_WORKSPACE = process.platform === 'win32' ? 'merge_target_combat_lua' : 'MacbookPro_Merge_Target_Combat_Lua';
+const MY_WORKSPACE = process.platform === 'win32' ? 'merge_target_combat_lua' : 'merge-combat-lua';
 const WORKSPACE_PATH = process.platform === 'win32' 
     ? 'D:/Perforce/merge_target_combat_lua' 
-    : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Combat_Lua';
+    : '/Users/hoangnguyen/Perforce/merge-combat-lua';
 
-const STREAM_PATCH   = '//dcwc/Gear_v1_1_16_3_Patch_A_Combat_Lua';
-const STREAM_PARENT  = '//dcwc/Gear_v1_1_16_Parent_Combat_Lua';
+const STREAM_PATCH   = '//dcwc/Gear_v1_1_17_1_Patch_A_Combat_Lua';
+const STREAM_PARENT  = '//dcwc/Gear_v1_1_17_Parent_Combat_Lua';
 const STREAM_TRUNK   = '//dcwc/combat_lua';
 const STREAM_STAGING = '//dcwc/Gear_Character_Staging_Combat_Lua';
 
-const CL_DESCRIPTION = '16.2: Merging ';
+const CL_DESCRIPTION = '17.1: Merging ';
 
 // ================= HELPER FUNCTIONS =================
 

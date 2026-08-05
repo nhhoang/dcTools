@@ -1,0 +1,12 @@
+# Per-build artifacts
+keys.json
+*.harvested.json
+.precheck-history/
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/

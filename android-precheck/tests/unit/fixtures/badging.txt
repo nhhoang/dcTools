@@ -1,0 +1,4 @@
+package: name='com.wb.goog.dc.dcwc' versionCode='1' versionName='1.1.14.1' platformBuildVersionName='15' platformBuildVersionCode='35' compileSdkVersion='35' compileSdkVersionCodename='15'
+minSdkVersion:'25'
+targetSdkVersion:'35'
+application-label:'DC Worlds Collide'

@@ -25,13 +25,13 @@ console.log = (...args) => {
 const { execSync } = require('child_process');
 
 // ================= CONFIGURATION =================
-const MY_WORKSPACE = process.platform === 'win32' ? 'merge_target_config' : 'MacbookPro_Merge_Target_Config';
+const MY_WORKSPACE = process.platform === 'win32' ? 'merge_target_config' : 'merge-config';
 const WORKSPACE_PATH = process.platform === 'win32' 
     ? 'D:/Perforce/merge_target_config' 
-    : '/Users/hoangnguyen/Perforce/MacbookPro_Merge_Target_Config';
+    : '/Users/hoangnguyen/Perforce/merge-config';
 
-const STREAM_PATCH   = '//dcwc/Gear_v1_1_16_3_Patch_A_Config';
-const STREAM_PARENT  = '//dcwc/Gear_v1_1_16_Parent_Config';
+const STREAM_PATCH   = '//dcwc/Gear_v1_1_17_1_Patch_A_Config';
+const STREAM_PARENT  = '//dcwc/Gear_v1_1_17_Parent_Config';
 const STREAM_TRUNK   = '//dcwc/config';
 const STREAM_STAGING = '//dcwc/Gear_Character_Staging_Config';
 
@@ -89,7 +89,7 @@ function integrateStream(sourceStream, targetStream) {
         
         // 5. Resolve
         console.log(`   Resolving files (Auto-Safe)...`);
-        runP4Command(`p4 resolve -c ${clId} -at -dw`, WORKSPACE_PATH);
+        runP4Command(`p4 resolve -c ${clId} -am -dw`, WORKSPACE_PATH);
         
         console.log(`   ✨ Hoàn tất integrate vào ${targetStream}.`);
     } else {
