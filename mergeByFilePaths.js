@@ -30,14 +30,16 @@ const { execSync } = require('child_process');
 // Absolute path to the file containing the list of CLs
 const CHANGE_LIST_FILE = path.resolve(__dirname, 'changelists.txt');
 const FILE_PATHS = [
- "//dcwc/Gear_Character_Development_Config/excel/Language/SourceCharacterUI.csv",
- "//dcwc/Gear_Character_Development_Config/excel/AllyCharacter.csv",
- "//dcwc/Gear_Character_Development_Config/excel/InfArenaBuff.csv",
- "//dcwc/Gear_Character_Development_Config/excel/Skills/SkillWorldwarEliteArena.csv",
- "//dcwc/Gear_Character_Development_Config/excel/ActivityAllyFuncMain.csv",
- "//dcwc/Gear_Character_Development_Config/excel/ActivityAllyFuncSub.csv",
- "//dcwc/Gear_Character_Development_Config/excel/RechargePack.csv",
- "//dcwc/Gear_Character_Development_Config/excel/ShareImage.csv",
+ "//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationActivityUI.csv",
+ "//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationBattleDesc.csv",
+ "//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationCharacterUI.csv",
+ "//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationCommonDesc.csv",
+ "//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationCommonUI.csv",
+ "//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationDrama.csv",
+ "//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationEnglishSource.csv",
+ "//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationItemDesc.csv",
+ "//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationLaunch.csv",
+ "//dcwc/Gear_Character_Development_Config/excel/Language/LocalizationShopUI.csv",
 ]
 
 // Absolute path to the 2 Workspaces
